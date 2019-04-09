@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AirportDetailActivity"></activity>
+        <activity
+            android:name=".ViewItinerary"
+            android:label="@string/title_activity_view_itinerary"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AirportDetailActivity" />
         <activity android:name=".AirportListActivity" />
         <activity android:name=".EditLoyaltyProgramActivity" />
         <activity android:name=".EditCreditCardActivity" />

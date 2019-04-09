@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CSC518_ListExample</string>
+    <string name="title_activity_view_itinerary">ViewItinerary</string>
 </resources>

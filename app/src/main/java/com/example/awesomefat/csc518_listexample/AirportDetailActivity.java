@@ -46,12 +46,13 @@ public class AirportDetailActivity extends AppCompatActivity
                 String[] parts = selectedAirport.split(" ");
 
                 Intent i = new Intent(myself, AirportDetailActivity.class);
-                i.putExtra("airportCode", parts[parts.length-1].trim());
+                i.putExtra("iata", parts[parts.length-1].trim());
                 String cityName = "";
                 for(int j = 0; j < parts.length-1; j++)
                 {
                     cityName = cityName + parts[j] + " ";
                 }
+                System.out.println("**** AirportDetailActivity.java adding " + cityName + " to the current intinerary.");
                 i.putExtra("cityName", cityName);
                 Core.currentItinerary.push(cityName + " " + parts[parts.length-1].trim());
                 myself.startActivity(i);
@@ -80,6 +81,9 @@ public class AirportDetailActivity extends AppCompatActivity
     public void onDisplayItineraryButtonPressed(View v)
     {
         Core.currentItinerary.display();
+        Intent i = new Intent(this, ViewItinerary.class);
+        this.startActivity(i);
+
     }
 
     @Override

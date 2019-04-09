@@ -54,4 +54,8 @@ public class ItineraryStack
         }
         System.out.println("");
     }
+
+    public int getCount() {
+        return count;
+    }
 }
