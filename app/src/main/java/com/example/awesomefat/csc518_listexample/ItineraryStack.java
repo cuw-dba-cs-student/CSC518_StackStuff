@@ -47,9 +47,15 @@ public class ItineraryStack
     {
         ItineraryStackNode currNode = this.top;
         System.out.println("*** Itinerary: ");
+        //Remove any itinerary destination strings
+        CoreItinerary.theItineraryStrings.clear();
         while(currNode != null)
         {
             currNode.display();
+            // Populate the itinerary destination linked list with the destinations
+            // currently in the itinerary stack.
+            CoreItinerary.theItineraryStrings.addFirst(currNode.getPayload());
+            //
             currNode = currNode.getNextNode();
         }
         System.out.println("");

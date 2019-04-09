@@ -61,7 +61,7 @@ public class AirportListActivity extends AppCompatActivity
                 for(DataSnapshot ds : dataSnapshot.getChildren())
                 {
                     temp = ds.getValue(Airport.class);
-                    System.out.println("**** City = " + temp.city  + " Country = " + temp.country + " Iata = " + temp.iata + " Name = " + temp.name + " Region = " + temp.region);
+                    //System.out.println("**** City = " + temp.city  + " Country = " + temp.country + " Iata = " + temp.iata + " Name = " + temp.name + " Region = " + temp.region);
                     theAirports.add(temp);
                     theAirportStrings.add(temp.toString());
                 }

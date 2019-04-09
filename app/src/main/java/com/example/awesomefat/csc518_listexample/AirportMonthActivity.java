@@ -11,18 +11,19 @@ import android.widget.TextView;
 
 import java.util.LinkedList;
 
-public class AirportDetailActivity extends AppCompatActivity
-{
+public class AirportMonthActivity extends AppCompatActivity {
+
     private ListView destinationsLV;
-    private AirportDetailActivity myself;
+    private AirportMonthActivity myself;
     private LinkedList<String> ll;
     private AirportCodeCache acc;
     private ArrayAdapter<String> aa;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_airport_month);
+
         this.myself = this;
         setContentView(R.layout.activity_airport_detail);
         final TextView airportTV = this.findViewById(R.id.airportTV);
@@ -59,54 +60,5 @@ public class AirportDetailActivity extends AppCompatActivity
             }
         });
 
-
-        String cityName = this.getIntent().getStringExtra("cityName");
-        String iata = this.getIntent().getStringExtra("iata");
-        iata = iata.replaceAll("\"","");
-        airportTV.setText(cityName + " - " + iata);
-
-        this.acc = new AirportCodeCache(iata);
-        acc.getData(aa, ll);
-
-        //Can't get airport stuff from cache
-        //NetworkThread nt = new NetworkThread(airportCode, aa, ll);
-        //nt.setPriority(Thread.MAX_PRIORITY);
-        //nt.start();
-
-        //strip the " from both ends of the airport code
-
-
-    }
-
-    public void onDisplayItineraryButtonPressed(View v)
-    {
-        Core.currentItinerary.display();
-        Intent i = new Intent(this, ViewItinerary.class);
-        this.startActivity(i);
-
-    }
-
-    @Override
-    public void onBackPressed()
-    {
-        Core.currentItinerary.pop();
-        CoreItinerary.theItineraryStrings.removeFirst();
-        super.onBackPressed();
-    }
-
-    public void onReloadCacheButtonPressed(View v)
-    {
-        this.acc.clearCache(this.aa, this.ll);
-    }
-
-    public void onGetFlightsForMnthBtnPressed (View v) {
-
-        String cityName = this.getIntent().getStringExtra("cityName");
-        String iata = this.getIntent().getStringExtra("iata");
-
-        Intent i = new Intent(this, SelectMonth.class);
-        i.putExtra("cityName", cityName);
-        i.putExtra("iata", iata);
-        this.startActivity(i);
     }
 }
