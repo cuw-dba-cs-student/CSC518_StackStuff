@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView creditCardLV, loyaltyProgramLV;
     private MainActivity myCurrentActivity;
 
+    private GetApFromCsvNetThread getApNt = new GetApFromCsvNetThread();
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -165,6 +167,12 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent i = new Intent(this, AddLoyaltyProgramActivity.class);
         this.startActivity(i);
+    }
+
+    public void onGetApFromCSVButtonPressed(View v)
+    {
+        // do stuff
+        getApNt.start();
     }
 
 }

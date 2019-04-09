@@ -34,6 +34,13 @@
             android:onClick="onAirportListButtonPressed"
             android:text="Airport List" />
 
+        <Button
+            android:id="@+id/getApFromCSV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onGetApFromCSVButtonPressed"
+            android:text="Reload Airports From CSV" />
+
         <ListView
             android:id="@+id/creditCardListView"
             android:layout_width="match_parent"

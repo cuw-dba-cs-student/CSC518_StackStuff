@@ -10,22 +10,22 @@ public class Airport implements Serializable
     public String city;
     public String iata;
 
-/*    public Airport(String name, String country, String region, String city, String iata)
+    public Airport(String name, String country, String region, String city, String iata)
     {
         this.name = name;
         this.country = country;
         this.region = region;
         this.city = city;
         this.iata = iata;
-    }*/
+    }
 
-    public Airport(String country, String region, String iata, String name, String city) {
+/*    public Airport(String country, String region, String iata, String name, String city) {
         this.country = country;
         this.region = region;
         this.iata = iata;
         this.name = name;
         this.city = city;
-    }
+    }*/
 
     public Airport()
     {
