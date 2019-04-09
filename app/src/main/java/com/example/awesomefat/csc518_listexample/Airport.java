@@ -8,15 +8,23 @@ public class Airport implements Serializable
     public String country;
     public String region;
     public String city;
-    public String airportCode;
+    public String iata;
 
-    public Airport(String name, String country, String region, String city, String airportCode)
+/*    public Airport(String name, String country, String region, String city, String iata)
     {
         this.name = name;
         this.country = country;
         this.region = region;
         this.city = city;
-        this.airportCode = airportCode;
+        this.iata = iata;
+    }*/
+
+    public Airport(String country, String region, String iata, String name, String city) {
+        this.country = country;
+        this.region = region;
+        this.iata = iata;
+        this.name = name;
+        this.city = city;
     }
 
     public Airport()
@@ -31,17 +39,17 @@ public class Airport implements Serializable
         return this.name.toLowerCase().contains(filterString) ||
                 this.city.toLowerCase().contains(filterString) ||
                 this.region.toLowerCase().contains(filterString) ||
-                this.airportCode.toLowerCase().contains(filterString) ||
+                this.iata.toLowerCase().contains(filterString) ||
                 this.country.toLowerCase().contains(filterString);
     }
 
     public String toString()
     {
-        return this.city + " | " + this.region + " | " +  this.country + "(" + this.airportCode + ")";
+        return this.city + " | " + this.region + " | " +  this.country + "(" + this.iata + ")";
     }
 
     public void display()
     {
-        System.out.println("*** " + this.name + "\t" + this.country + "\t" + this.region + "\t" + this.city + "\t" + this.airportCode);
+        System.out.println("*** " + this.name + "\t" + this.country + "\t" + this.region + "\t" + this.city + "\t" + this.iata);
     }
 }

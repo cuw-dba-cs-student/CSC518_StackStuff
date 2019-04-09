@@ -45,14 +45,14 @@ public class AirportListActivity extends AppCompatActivity
             {
                 Intent i = new Intent(myself, AirportDetailActivity.class);
                 Airport selectedAirport = myself.theFilteredAirports.get(position);
-                i.putExtra("airportCode", selectedAirport.airportCode);
+                i.putExtra("iata", selectedAirport.iata);
                 i.putExtra("cityName", selectedAirport.city);
-                Core.currentItinerary.push(selectedAirport.city + " " + selectedAirport.airportCode);
+                Core.currentItinerary.push(selectedAirport.city + " " + selectedAirport.iata);
                 myself.startActivity(i);
 
             }
         });
-        DatabaseReference ref = Core.database.getReference("world_airports");
+        DatabaseReference ref = Core.database.getReference("airports");
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)

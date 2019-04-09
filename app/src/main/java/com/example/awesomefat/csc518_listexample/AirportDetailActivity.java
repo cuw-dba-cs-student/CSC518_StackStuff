@@ -60,11 +60,11 @@ public class AirportDetailActivity extends AppCompatActivity
 
 
         String cityName = this.getIntent().getStringExtra("cityName");
-        String airportCode = this.getIntent().getStringExtra("airportCode");
-        airportCode = airportCode.replaceAll("\"","");
-        airportTV.setText(cityName + " - " + airportCode);
+        String iata = this.getIntent().getStringExtra("iata");
+        iata = iata.replaceAll("\"","");
+        airportTV.setText(cityName + " - " + iata);
 
-        this.acc = new AirportCodeCache(airportCode);
+        this.acc = new AirportCodeCache(iata);
         acc.getData(aa, ll);
 
         //Can't get airport stuff from cache
